@@ -39,6 +39,16 @@ def valid_move?(board, index)
   end
 end
 
+def turn_count(board)
+  counter = 0
+  board.each do |turn|
+    if turn == "X" || turn == "O"
+      counter += 1
+    end
+  end
+  return counter
+end
+
 def won?(board)
   WIN_COMBINATIONS.each { |win_combo|
     win_index_0 = win_combo[0]
