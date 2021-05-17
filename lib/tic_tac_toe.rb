@@ -49,6 +49,10 @@ def turn_count(board)
   return counter
 end
 
+def current_player(board)
+  turn_count(board).even? ? "X" : "O"
+end
+
 def won?(board)
   WIN_COMBINATIONS.each { |win_combo|
     win_index_0 = win_combo[0]
