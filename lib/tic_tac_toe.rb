@@ -53,6 +53,18 @@ def current_player(board)
   turn_count(board).even? ? "X" : "O"
 end
 
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.chomp
+  index = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index, player = "X")
+  else
+    turn(board)
+  end
+  display_board(board)
+end
+
 def won?(board)
   WIN_COMBINATIONS.each { |win_combo|
     win_index_0 = win_combo[0]
