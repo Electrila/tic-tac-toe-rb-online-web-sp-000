@@ -1,7 +1,3 @@
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
-end
-
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
     [0, 1, 2],
@@ -30,7 +26,11 @@ end
 def move(board, index, player="X")
   board[index] = player
 end
- 
+
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
 def won?(board)
   WIN_COMBINATIONS.each { |win_combo|
     win_index_0 = win_combo[0]
