@@ -116,9 +116,8 @@ def winner(board)
 end
 
 def play(board)
-  input = gets.chomp
   until over?(board) == true
-    play(board)
+    turn(board)
   end
 end
 
